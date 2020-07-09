@@ -1,12 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import articleContent from './article-content';
 
-const ArticlesList = () => (
+const ArticlesList = ({ articles }) => (
     <>
-        <h1>Articles</h1>
-        {articleContent.map((article, k) => (
-
+        {articles.map((article, k) => (
             <Link className="article-list-item" to={`article/${article.name}`} key={k}>
                 <h3>
                     {article.title}
@@ -15,6 +12,6 @@ const ArticlesList = () => (
             </Link>
         ))}
     </>
-);
+)
 
 export default ArticlesList;
